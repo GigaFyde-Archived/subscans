@@ -9,8 +9,9 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 public class ReactionListener extends ListenerAdapter {
     public static Role allseries;
     public static Role greatimmortal;
-    public static Role devilcantlast;
-    public static Role matchlessemperor;
+    public static Role bladeofevolution;
+    public static Role gatewayofrevolution;
+    public static Role immportalemperor;
 
     @Override
     public void onGuildMessageReactionAdd(GuildMessageReactionAddEvent event) {
@@ -20,9 +21,11 @@ public class ReactionListener extends ListenerAdapter {
         if (event.getReactionEmote().getName().equals("\u0031\ufe0f\u20e3"))
             event.getGuild().addRoleToMember(event.getMember(), greatimmortal).reason("Reaction Role").queue();
         if (event.getReactionEmote().getName().equals("\u0032\ufe0f\u20e3"))
-            event.getGuild().addRoleToMember(event.getMember(), devilcantlast).reason("Reaction Role").queue();
+            event.getGuild().addRoleToMember(event.getMember(), bladeofevolution).reason("Reaction Role").queue();
         if (event.getReactionEmote().getName().equals("\u0033\ufe0f\u20e3"))
-            event.getGuild().addRoleToMember(event.getMember(), matchlessemperor).reason("Reaction Role").queue();
+            event.getGuild().addRoleToMember(event.getMember(), gatewayofrevolution).reason("Reaction Role").queue();
+        if (event.getReactionEmote().getName().equals("\u0033\ufe0f\u20e4"))
+            event.getGuild().addRoleToMember(event.getMember(), immportalemperor).reason("Reaction Role").queue();
     }
 
     @Override
@@ -34,9 +37,11 @@ public class ReactionListener extends ListenerAdapter {
         if (event.getReactionEmote().getName().equals("\u0031\ufe0f\u20e3"))
             event.getGuild().removeRoleFromMember(member, greatimmortal).reason("Reaction Role").queue();
         if (event.getReactionEmote().getName().equals("\u0032\ufe0f\u20e3"))
-            event.getGuild().removeRoleFromMember(member, devilcantlast).reason("Reaction Role").queue();
+            event.getGuild().removeRoleFromMember(member, bladeofevolution).reason("Reaction Role").queue();
         if (event.getReactionEmote().getName().equals("\u0033\ufe0f\u20e3"))
-            event.getGuild().removeRoleFromMember(member, matchlessemperor).reason("Reaction Role").queue();
+            event.getGuild().removeRoleFromMember(member, gatewayofrevolution).reason("Reaction Role").queue();
+        if (event.getReactionEmote().getName().equals("\u0033\ufe0f\u20e4"))
+            event.getGuild().removeRoleFromMember(member, immportalemperor).reason("Reaction Role").queue();
     }
 
 }

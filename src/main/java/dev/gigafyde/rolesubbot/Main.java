@@ -11,8 +11,9 @@ public class Main {
                 .build();
         jda.awaitReady();
         ReactionListener.allseries = jda.getRoleById("794678279579500574");
-        ReactionListener.devilcantlast = jda.getRoleById("795635019280023603");
+        ReactionListener.bladeofevolution = jda.getRoleById("795635019280023603");
         ReactionListener.greatimmortal = jda.getRoleById("795634948835901480");
-        ReactionListener.matchlessemperor = jda.getRoleById("795635152750903296");
+        ReactionListener.gatewayofrevolution = jda.getRoleById("795635152750903296");
+        ReactionListener.immportalemperor = jda.getRoleById("799193875251855370");
     }
 }
