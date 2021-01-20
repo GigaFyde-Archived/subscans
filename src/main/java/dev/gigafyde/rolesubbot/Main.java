@@ -15,5 +15,6 @@ public class Main {
         ReactionListener.greatimmortal = jda.getRoleById("795634948835901480");
         ReactionListener.gatewayofrevolution = jda.getRoleById("795635152750903296");
         ReactionListener.immportalemperor = jda.getRoleById("799193875251855370");
+        ReactionListener.shinsujeilsword = jda.getRoleById("801463721577939005");
     }
 }
