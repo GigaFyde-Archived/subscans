@@ -25,9 +25,9 @@ public class ReactionListener extends ListenerAdapter {
             event.getGuild().addRoleToMember(event.getMember(), bladeofevolution).reason("Reaction Role").queue();
         if (event.getReactionEmote().getName().equals("\u0033\ufe0f\u20e3"))
             event.getGuild().addRoleToMember(event.getMember(), gatewayofrevolution).reason("Reaction Role").queue();
-        if (event.getReactionEmote().getName().equals("\u0033\ufe0f\u20e4"))
+        if (event.getReactionEmote().getName().equals("\u0034\ufe0f\u20e3"))
             event.getGuild().addRoleToMember(event.getMember(), immportalemperor).reason("Reaction Role").queue();
-        if (event.getReactionEmote().getName().equals("\u0033\ufe0f\u20e5"))
+        if (event.getReactionEmote().getName().equals("\u0035\ufe0f\u20e3"))
             event.getGuild().addRoleToMember(event.getMember(), shinsujeilsword).reason("Reaction Role").queue();
     }
 
@@ -43,9 +43,9 @@ public class ReactionListener extends ListenerAdapter {
             event.getGuild().removeRoleFromMember(member, bladeofevolution).reason("Reaction Role").queue();
         if (event.getReactionEmote().getName().equals("\u0033\ufe0f\u20e3"))
             event.getGuild().removeRoleFromMember(member, gatewayofrevolution).reason("Reaction Role").queue();
-        if (event.getReactionEmote().getName().equals("\u0033\ufe0f\u20e4"))
+        if (event.getReactionEmote().getName().equals("\u0034\ufe0f\u20e3"))
             event.getGuild().removeRoleFromMember(member, immportalemperor).reason("Reaction Role").queue();
-        if (event.getReactionEmote().getName().equals("\u0033\ufe0f\u20e5"))
+        if (event.getReactionEmote().getName().equals("\u0035\ufe0f\u20e3"))
             event.getGuild().removeRoleFromMember(member, shinsujeilsword).reason("Reaction Role").queue();
     }
 }
