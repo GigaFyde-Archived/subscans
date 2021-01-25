@@ -3,7 +3,7 @@ import java.time.Clock
 plugins {
     id 'java'
     id 'application'
-    id 'com.google.cloud.tools.jib' version '2.7.0'
+    id 'com.google.cloud.tools.jib' version '2.7.1'
 }
 
 group 'dev.gigafyde'
