@@ -1,4 +1,4 @@
-package dev.gigafyde.rolesubbot;
+package dev.gigafyde.subscans.listeners;
 
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
@@ -6,7 +6,7 @@ import net.dv8tion.jda.api.events.message.guild.react.GuildMessageReactionAddEve
 import net.dv8tion.jda.api.events.message.guild.react.GuildMessageReactionRemoveEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-public class ReactionListener extends ListenerAdapter {
+public class ReactionRoleListener extends ListenerAdapter {
     public static Role allseries;
     public static Role greatimmortal;
     public static Role bladeofevolution;
