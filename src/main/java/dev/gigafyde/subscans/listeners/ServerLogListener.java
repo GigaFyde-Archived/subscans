@@ -42,7 +42,6 @@ import net.dv8tion.jda.api.events.role.RoleDeleteEvent;
 import net.dv8tion.jda.api.events.role.update.RoleUpdateNameEvent;
 import net.dv8tion.jda.api.events.user.update.UserUpdateNameEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import org.w3c.dom.Text;
 
 public class ServerLogListener extends ListenerAdapter {
     private final Cache<Long, Message> modlogCache = CacheBuilder.newBuilder().concurrencyLevel(10).maximumSize(2_500).build();
@@ -152,44 +151,40 @@ public class ServerLogListener extends ListenerAdapter {
         long days = Duration.between(event.getMember().getUser().getTimeCreated(), OffsetDateTime.now()).toDays();
         String created = days > 10 ? String.format("**Created %s days ago.**", days) : String.format(Emotes.WARN + " **New User - joined %s days ago.**", days);
 
-        log(String.format(Emotes.SUCCESS + " %s | %s joined the server. %s Total members **%s**",
+        log(String.format(Emotes.SUCCESS + " %s | %s joined the server.",
                 logTime(),
                 getUser(event.getMember()),
-                created,
-                event.getGuild().getMembers().size()));
+                created));
     }
 
     @Override
-    public void onGuildMemberRemove(GuildMemberRemoveEvent event) { ;
+    public void onGuildMemberRemove(GuildMemberRemoveEvent event) {
+        ;
         if (!event.getGuild().getSelfMember().hasPermission(Permission.VIEW_AUDIT_LOGS)) {
-            log(String.format(Emotes.LEAVE + " %s | %s has left or was kicked from the server. Total members **%s**",
+            log(String.format(Emotes.LEAVE + " %s | %s has left or was kicked from the server.",
                     logTime(),
-                    getUser(event.getMember()),
-                    event.getGuild().getMembers().size()));
+                    getUser(event.getMember())));
             return;
         }
 
         List<AuditLogEntry> kicks = event.getGuild().retrieveAuditLogs().type(ActionType.KICK).complete();
         if (!kicks.isEmpty() && Instant.now().getEpochSecond() - kicks.get(0).getTimeCreated().toInstant().getEpochSecond() <= 2 && kicks.get(0).getTargetIdLong() == event.getMember().getUser().getIdLong()) {
-            log(String.format(Emotes.KICK + "%s | %s was kicked. Total members **%s**",
+            log(String.format(Emotes.KICK + "%s | %s was kicked.",
                     logTime(),
-                    getUser(event.getMember()),
-                    event.getGuild().getMembers().size()));
+                    getUser(event.getMember())));
         } else {
-            log(String.format(Emotes.LEAVE + " %s | %s has left the server. Total members **%s**",
+            log(String.format(Emotes.LEAVE + " %s | %s has left the server.",
                     logTime(),
-                    getUser(event.getMember()),
-                    event.getGuild().getMembers().size()));
+                    getUser(event.getMember())));
         }
     }
 
     @Override
     public void onGuildBan(GuildBanEvent event) {
-        log(String.format(Emotes.BAN + " %s | **%s** (`%s`) has been banned:  Total members %s.",
+        log(String.format(Emotes.BAN + " %s | **%s** (`%s`) has been banned.",
                 logTime(),
                 getTag(event.getUser()),
-                event.getUser().getId(),
-                event.getGuild().getMembers().size()));
+                event.getUser().getId()));
     }
 
 

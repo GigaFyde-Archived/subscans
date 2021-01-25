@@ -10,7 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.LoggerFactory;
 
-public final class Haste {
+public class Haste {
     private static final OkHttpClient client = new OkHttpClient();
 
     public static String paste(String input) {
