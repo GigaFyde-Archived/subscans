@@ -31,7 +31,7 @@ jib {
 
     }
     container {
-        mainClassName='dev.gigafyde.rolesubbot.Main'
+        mainClassName='dev.gigafyde.subscans.Main'
         creationTime = Clock.systemUTC().instant()
     }
 }
