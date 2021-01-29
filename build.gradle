@@ -9,7 +9,7 @@ plugins {
 group 'dev.gigafyde'
 version '1.1.0'
 mainClassName = 'dev.gigafyde.subscans.Main'
-sourceCompatibility = 15
+sourceCompatibility = 11
 
 repositories {
     jcenter()
@@ -26,10 +26,6 @@ dependencies {
 }
 
 jib {
-    from {
-        image = 'ghcr.io/openzipkin/java:15.0.1_p9'
-
-    }
     container {
         mainClassName='dev.gigafyde.subscans.Main'
         creationTime = Clock.systemUTC().instant()

@@ -249,7 +249,7 @@ public class ServerLogListener extends ListenerAdapter {
 
             log(String.format(Emotes.CHANGE + " %s | %s Changed their username `%s` ➥ `%s`",
                     logTime(),
-                    getUser(event.getUser()),
+                    event.getOldName().replace("`", "") + "#" + event.getUser().getDiscriminator() + " (" + event.getUser().getId() + ")",
                     event.getOldName().replace("`", ""),
                     event.getNewName().replace("`", "")));
         }
