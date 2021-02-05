@@ -1,6 +1,7 @@
 package dev.gigafyde.subscans;
 
 import dev.gigafyde.subscans.listeners.ReactionRoleListener;
+import dev.gigafyde.subscans.listeners.RoleListener;
 import dev.gigafyde.subscans.listeners.ServerLogListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -12,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         jda = JDABuilder.createDefault(System.getenv("TOKEN"))
-                .addEventListeners(new ReactionRoleListener(), new ServerLogListener())
+                .addEventListeners(new ReactionRoleListener(), new ServerLogListener(), new RoleListener())
                 .enableIntents(GatewayIntent.GUILD_MEMBERS)
                 .setMemberCachePolicy(MemberCachePolicy.ALL)
                 .build();
