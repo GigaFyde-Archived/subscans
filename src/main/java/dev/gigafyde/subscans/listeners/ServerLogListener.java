@@ -163,7 +163,7 @@ public class ServerLogListener extends ListenerAdapter {
         if (!event.getGuild().getSelfMember().hasPermission(Permission.VIEW_AUDIT_LOGS)) {
             log(String.format(Emotes.LEAVE + " %s | %s has left or was kicked from the server.",
                     logTime(),
-                    getUser(event.getMember())));
+                    getUser(event.getUser())));
             return;
         }
 
@@ -171,11 +171,11 @@ public class ServerLogListener extends ListenerAdapter {
         if (!kicks.isEmpty() && Instant.now().getEpochSecond() - kicks.get(0).getTimeCreated().toInstant().getEpochSecond() <= 2 && kicks.get(0).getTargetIdLong() == event.getMember().getUser().getIdLong()) {
             log(String.format(Emotes.KICK + "%s | %s was kicked.",
                     logTime(),
-                    getUser(event.getMember())));
+                    getUser(event.getUser())));
         } else {
             log(String.format(Emotes.LEAVE + " %s | %s has left the server.",
                     logTime(),
-                    getUser(event.getMember())));
+                    getUser(event.getUser())));
         }
     }
 
