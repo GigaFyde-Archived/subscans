@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    implementation 'io.sentry:sentry-logback:4.0.0'
     implementation group: 'com.google.guava', name: 'guava', version: '27.0-jre'
     implementation group: 'org.json', name: 'json', version: '20141113'
     implementation("net.dv8tion:JDA:4.2.0_222") {
