@@ -29,7 +29,6 @@ public class Main {
             ReactionRoleListener.greatimmortal = jda.getRoleById("795634948835901480");
             ReactionRoleListener.gatewayofrevolution = jda.getRoleById("795635152750903296");
             ReactionRoleListener.immportalemperor = jda.getRoleById("799193875251855370");
-            ReactionRoleListener.lightningdegree = jda.getRoleById("801463721577939005");
         } catch (Exception e) {
             Sentry.captureException(e);
         }

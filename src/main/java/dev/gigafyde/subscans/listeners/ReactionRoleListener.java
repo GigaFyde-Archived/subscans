@@ -12,7 +12,6 @@ public class ReactionRoleListener extends ListenerAdapter {
     public static Role bladeofevolution;
     public static Role gatewayofrevolution;
     public static Role immportalemperor;
-    public static Role lightningdegree;
 
     @Override
     public void onGuildMessageReactionAdd(GuildMessageReactionAddEvent event) {
@@ -27,8 +26,6 @@ public class ReactionRoleListener extends ListenerAdapter {
             event.getGuild().addRoleToMember(event.getMember(), gatewayofrevolution).reason("Reaction Role").queue();
         if (event.getReactionEmote().getName().equals("\u0034\ufe0f\u20e3"))
             event.getGuild().addRoleToMember(event.getMember(), immportalemperor).reason("Reaction Role").queue();
-        if (event.getReactionEmote().getName().equals("\u0035\ufe0f\u20e3"))
-            event.getGuild().addRoleToMember(event.getMember(), lightningdegree).reason("Reaction Role").queue();
     }
 
     @Override
@@ -45,7 +42,5 @@ public class ReactionRoleListener extends ListenerAdapter {
             event.getGuild().removeRoleFromMember(member, gatewayofrevolution).reason("Reaction Role").queue();
         if (event.getReactionEmote().getName().equals("\u0034\ufe0f\u20e3"))
             event.getGuild().removeRoleFromMember(member, immportalemperor).reason("Reaction Role").queue();
-        if (event.getReactionEmote().getName().equals("\u0035\ufe0f\u20e3"))
-            event.getGuild().removeRoleFromMember(member, lightningdegree).reason("Reaction Role").queue();
     }
 }
